@@ -1,16 +1,16 @@
 <?php
 
-use Lorisleiva\Skeleton\Skeleton;
+use Lorisleiva\ArtisanUI\ArtisanUI;
 
 it('resolves from the container', function () {
-    $skeleton = app(Skeleton::class);
+    $skeleton = app(ArtisanUI::class);
 
-    expect($skeleton instanceof Skeleton)->toBeTrue();
+    expect($skeleton instanceof ArtisanUI)->toBeTrue();
 });
 
 it('resolves as a singleton', function () {
-    $skeletonA = app(Skeleton::class);
-    $skeletonB = app(Skeleton::class);
+    $skeletonA = app(ArtisanUI::class);
+    $skeletonB = app(ArtisanUI::class);
 
     expect($skeletonA)->toBe($skeletonB);
 });

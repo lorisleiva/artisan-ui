@@ -1,8 +1,8 @@
 <?php
 
-namespace Lorisleiva\Skeleton\Tests;
+namespace Lorisleiva\ArtisanUI\Tests;
 
-use Lorisleiva\Skeleton\SkeletonServiceProvider;
+use Lorisleiva\ArtisanUI\ArtisanUIServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -10,7 +10,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            ArtisanUIServiceProvider::class,
         ];
     }
 

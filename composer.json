@@ -1,11 +1,12 @@
 {
-    "name": "lorisleiva/skeleton",
-    "description": "TODO",
+    "name": "lorisleiva/artisan-ui",
+    "description": "Run your artisan commands by pressing buttons.",
     "keywords": [
         "laravel",
-        "skeleton"
+        "artisan",
+        "ui"
     ],
-    "homepage": "https://github.com/lorisleiva/skeleton",
+    "homepage": "https://github.com/lorisleiva/artisan-ui",
     "license": "MIT",
     "authors": [
         {
@@ -16,8 +17,8 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/contracts": "^7.0|^8.0"
+        "php": "^8.0",
+        "illuminate/contracts": "^8.0"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -26,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Lorisleiva\\Skeleton\\": "src"
+            "Lorisleiva\\ArtisanUI\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Lorisleiva\\Skeleton\\Tests\\": "tests"
+            "Lorisleiva\\ArtisanUI\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,11 +45,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lorisleiva\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "Lorisleiva\\Skeleton\\Facades\\Skeleton"
-            }
+                "Lorisleiva\\ArtisanUI\\ArtisanUIServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
