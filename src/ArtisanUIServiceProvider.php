@@ -3,6 +3,7 @@
 namespace Lorisleiva\ArtisanUI;
 
 use Illuminate\Support\ServiceProvider;
+use Lorisleiva\ArtisanUI\Commands\ArtisanUIInstallCommand;
 
 class ArtisanUIServiceProvider extends ServiceProvider
 {
