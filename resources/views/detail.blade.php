@@ -1,10 +1,10 @@
 @extends('artisan-ui::layout')
 
 @section('content')
-    <h1 class="text-red-500">{{ $command->getName() }}</h1>
-
-    <h2>{{ $command->getDescription() }}</h2>
-    <p>{{ $command->getHelp() }}</p>
+    <header class="mb-6">
+        <h1 class="text-3xl font-mono">{{ $command->getName() }}</h1>
+        <p class="text-gray-700">{{ $command->getDescription() }}</p>
+    </header>
 
     <h3>Arguments</h3>
     <ul>
