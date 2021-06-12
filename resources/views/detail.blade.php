@@ -6,21 +6,35 @@
         <p class="text-gray-700">{{ $command->getDescription() }}</p>
     </header>
 
-    <h3>Arguments</h3>
-    <ul>
-        @foreach($command->getDefinition()->getArguments() as $argument)
-            <li>
-                {{ $argument->getName() }}
-            </li>
-        @endforeach
-    </ul>
+    <div x-data="{ open: false }" class="mb-4">
+        @include('artisan-ui::partials.accordion-button', [
+            'title' => sprintf('Arguments (%s)', count($command->getDefinition()->getArguments()))
+        ])
 
-    <h3>Options</h3>
-    <ul>
-        @foreach($command->getDefinition()->getOptions() as $option)
-            <li>
-                {{ $option->getName() }}
-            </li>
-        @endforeach
-    </ul>
+        <ul x-show="open">
+            @foreach($command->getDefinition()->getArguments() as $argument)
+                <li>
+                    {{ $argument->getName() }}
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
+    <div x-data="{ open: false }" class="mb-4">
+        @include('artisan-ui::partials.accordion-button', [
+            'title' => sprintf('Options (%s)', count($command->getDefinition()->getOptions()))
+        ])
+
+        <ul x-show="open">
+            @foreach($command->getDefinition()->getOptions() as $option)
+                <li>
+                    {{ $option->getName() }}
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
+    <button class="px-6 py-2 bg-gray-700 text-white rounded">
+        Execute
+    </button>
 @endsection
