@@ -1,0 +1,35 @@
+{
+  "name": "artisan-ui",
+  "version": "1.0.0",
+  "description": "Run your artisan commands by pressing buttons.",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.2",
+    "tailwindcss": "^2.1.4"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.19"
+  },
+  "scripts": {
+      "dev": "npm run development",
+      "development": "mix",
+      "watch": "mix watch",
+      "watch-poll": "mix watch -- --watch-options-poll=1000",
+      "hot": "mix watch --hot",
+      "prod": "npm run production",
+      "production": "mix --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorisleiva/artisan-ui.git"
+  },
+  "author": "Loris Leiva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lorisleiva/artisan-ui/issues"
+  },
+  "homepage": "https://github.com/lorisleiva/artisan-ui#readme"
+}
