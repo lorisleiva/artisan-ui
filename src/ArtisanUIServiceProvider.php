@@ -4,30 +4,19 @@ namespace Lorisleiva\ArtisanUI;
 
 use Illuminate\Support\ServiceProvider;
 use Lorisleiva\ArtisanUI\Commands\ArtisanUIInstallCommand;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class ArtisanUIServiceProvider extends ServiceProvider
+class ArtisanUIServiceProvider extends PackageServiceProvider
 {
-    public function boot()
+    public function configurePackage(Package $package): void
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishConfig();
-            $this->commands([
-                ArtisanUIInstallCommand::class,
-            ]);
-        }
-    }
-
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__ . '/../config/artisan-ui.php', 'artisan-ui');
-
-        $this->app->singleton(ArtisanUI::class);
-    }
-
-    protected function publishConfig()
-    {
-        $this->publishes([
-            __DIR__ . '/../config/artisan-ui.php' => config_path('artisan-ui.php'),
-        ], ['config', 'artisan-ui-config']);
+        $package
+            ->name('artisan-ui')
+            ->hasConfigFile()
+            ->hasViews()
+            ->hasAssets()
+            ->hasRoute('web')
+            ->hasCommand(ArtisanUIInstallCommand::class);
     }
 }
