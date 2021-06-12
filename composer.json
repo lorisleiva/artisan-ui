@@ -1,0 +1,62 @@
+{
+    "name": "lorisleiva/skeleton",
+    "description": "TODO",
+    "keywords": [
+        "laravel",
+        "skeleton"
+    ],
+    "homepage": "https://github.com/lorisleiva/skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Loris Leiva",
+            "email": "loris.leiva@gmail.com",
+            "homepage": "https://lorisleiva.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/contracts": "^7.0|^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "pestphp/pest": "^0.3.14",
+        "phpunit/phpunit": "^9.3.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lorisleiva\\Skeleton\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lorisleiva\\Skeleton\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lorisleiva\\Skeleton\\SkeletonServiceProvider"
+            ],
+            "aliases": {
+                "Skeleton": "Lorisleiva\\Skeleton\\Facades\\Skeleton"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/lorisleiva"
+        }
+    ]
+}
