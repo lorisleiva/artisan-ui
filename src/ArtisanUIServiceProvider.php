@@ -18,4 +18,9 @@ class ArtisanUIServiceProvider extends PackageServiceProvider
             ->hasRoute('web')
             ->hasCommand(ArtisanUIInstallCommand::class);
     }
+
+    public function packageRegistered()
+    {
+        $this->app->singleton(ArtisanUI::class);
+    }
 }
