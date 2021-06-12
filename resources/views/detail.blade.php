@@ -1,4 +1,5 @@
 @extends('artisan-ui::layout')
+@php /** @var Illuminate\Console\Command $command */ @endphp
 
 @section('content')
     <header class="mb-6">
@@ -14,7 +15,7 @@
         <ul x-show="open">
             @foreach($command->getDefinition()->getArguments() as $argument)
                 <li>
-                    {{ $argument->getName() }}
+                    @include('artisan-ui::.partials.argument', compact('argument'))
                 </li>
             @endforeach
         </ul>
@@ -28,7 +29,7 @@
         <ul x-show="open">
             @foreach($command->getDefinition()->getOptions() as $option)
                 <li>
-                    {{ $option->getName() }}
+                    @include('artisan-ui::.partials.option', compact('option'))
                 </li>
             @endforeach
         </ul>

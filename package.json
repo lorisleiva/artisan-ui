@@ -11,16 +11,17 @@
     "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.3.3",
     "laravel-mix": "^6.0.19"
   },
   "scripts": {
-      "dev": "npm run development",
-      "development": "mix",
-      "watch": "mix watch",
-      "watch-poll": "mix watch -- --watch-options-poll=1000",
-      "hot": "mix watch --hot",
-      "prod": "npm run production",
-      "production": "mix --production"
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
   },
   "repository": {
     "type": "git",
