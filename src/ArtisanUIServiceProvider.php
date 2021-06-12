@@ -2,7 +2,6 @@
 
 namespace Lorisleiva\ArtisanUI;
 
-use Illuminate\Support\ServiceProvider;
 use Lorisleiva\ArtisanUI\Commands\ArtisanUIInstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
