@@ -4,7 +4,7 @@
         <input
             type="text"
             class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-            placeholder="{{ $default ?? '' }}"
+            placeholder="{{ is_string($default) ? $default : '' }}"
         >
     </div>
     <p class="mt-2 text-sm text-gray-500" x-show="{{ !! ($description ?? null) }}">

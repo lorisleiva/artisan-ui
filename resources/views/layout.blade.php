@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ asset('vendor/artisan-ui/artisan-ui.css') }}" rel="stylesheet">
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="//unpkg.com/axios" defer></script>
 </head>
 <body>
     <main class="max-w-xl mx-auto py-12 px-8">
