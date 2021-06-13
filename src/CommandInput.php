@@ -45,6 +45,6 @@ abstract class CommandInput
 
     public function getAbsoluteKey(): string
     {
-        return sprintf('%s.%s', $this->getType(), $this->getName());
+        return sprintf('%s["%s"]', $this->getType(), $this->getName());
     }
 }

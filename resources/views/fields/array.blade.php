@@ -7,6 +7,8 @@
             <div class="text-gray-500">•</div>
             <div class="text-gray-500">required</div>
         @endif
+        <div class="text-gray-500">•</div>
+        <div class="text-gray-500">array</div>
     </label>
     <div class="mt-1">
         <input

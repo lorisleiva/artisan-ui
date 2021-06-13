@@ -21,8 +21,7 @@
                     @foreach($command->getArguments() as $argument)
                         <li>
                             @if($argument->isArray())
-                                {{-- TODO --}}
-                                @include('artisan-ui::fields.text', ['input' => $argument])
+                                @include('artisan-ui::fields.array', ['input' => $argument])
                             @else
                                 @include('artisan-ui::fields.text', ['input' => $argument])
                             @endif
@@ -45,8 +44,7 @@
                             @if($option->isBoolean())
                                 @include('artisan-ui::fields.boolean', ['input' => $option])
                             @elseif($option->isArray())
-                                {{-- TODO --}}
-                                @include('artisan-ui::fields.text', ['input' => $option])
+                                @include('artisan-ui::fields.array', ['input' => $option])
                             @else
                                 @include('artisan-ui::fields.text', ['input' => $option])
                             @endif
