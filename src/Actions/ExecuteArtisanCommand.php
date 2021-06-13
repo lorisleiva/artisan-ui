@@ -2,14 +2,20 @@
 
 namespace Lorisleiva\ArtisanUI\Actions;
 
-use Illuminate\View\View;
 use Lorisleiva\ArtisanUI\ArtisanUI;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 
 class ExecuteArtisanCommand
 {
-    public function __invoke(string $name, ArtisanUI $artisanUI): View
+    public function __invoke(string $name, ArtisanUI $artisanUI): string
     {
-        return view('artisan-ui::execution')
-            ->with('command', $artisanUI->findOrFail($name));
+        $command = $artisanUI->findOrFail($name);
+
+        $input = new StringInput('SomeEvent');
+        $output = new BufferedOutput();
+        $command->run($input, $output);
+
+        return $output->fetch();
     }
 }
