@@ -7,7 +7,7 @@ use Lorisleiva\ArtisanUI\Actions\ShowArtisanUI;
 
 
 Route::group([
-    'domain' => config('artisan-ui.domain', null),
+    'domain' => config('artisan-ui.domain'),
     'prefix' => config('artisan-ui.path'),
     'middleware' => config('artisan-ui.middleware', 'web'),
     'as' => 'artisan-ui.',
