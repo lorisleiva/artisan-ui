@@ -5,4 +5,5 @@
     'default' => $argument->getDefault(),
     'description' => $argument->getDescription(),
     'required' => $argument->isRequired(),
+    'fieldType' => 'arguments',
 ])

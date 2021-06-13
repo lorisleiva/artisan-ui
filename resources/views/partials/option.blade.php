@@ -6,6 +6,7 @@
         'default' => $option->getDefault(),
         'description' => $option->getDescription(),
         'required' => $option->isValueRequired(),
+        'fieldType' => 'options',
     ])
 @elseif($option->acceptValue())
     @include('artisan-ui::fields.text', [
@@ -13,11 +14,13 @@
         'default' => $option->getDefault(),
         'description' => $option->getDescription(),
         'required' => $option->isValueRequired(),
+        'fieldType' => 'options',
     ])
 @else
     @include('artisan-ui::fields.boolean', [
         'name' => $option->getName(),
         'default' => $option->getDefault(),
         'description' => $option->getDescription(),
+        'fieldType' => 'options',
     ])
 @endif

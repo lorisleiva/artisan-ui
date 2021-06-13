@@ -98,8 +98,12 @@
                 execute () {
                     if (this.state === 'loading') return
                     this.state = 'loading'
+                    const payload = {
+                        arguments: this.arguments,
+                        options: this.options,
+                    }
 
-                    axios.post(this.route)
+                    axios.post(this.route, payload)
                         .then(this.onSuccess.bind(this))
                         .catch(this.onFailure.bind(this))
                 },
