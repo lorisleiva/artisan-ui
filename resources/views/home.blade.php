@@ -13,7 +13,7 @@
                 @foreach($commandGroup as $command)
                     <li>
                         <a href="{{ route('artisan-ui.detail', $command->getName()) }}" class="block border border-transparent hover:border-gray-300 hover:bg-gray-50 rounded px-4 py-2">
-                            <h3 class="font-medium">{{ $command->getName() }}</h3>
+                            <h3 class="font-mono">{{ $command->getName() }}</h3>
                             <p class="text-gray-500 text-sm truncate">{{ $command->getDescription() }}</p>
                         </a>
                     </li>
