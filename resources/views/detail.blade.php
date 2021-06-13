@@ -17,7 +17,7 @@
             ])
 
             @if($command->hasArguments())
-                <ul x-show="open" class="space-y-4 py-4">
+                <ul x-cloak x-show="open" class="space-y-4 py-4">
                     @foreach($command->getArguments() as $argument)
                         <li>
                             @if($argument->isArray())
@@ -39,7 +39,7 @@
             ])
 
             @if($command->hasOptions())
-                <ul x-show="open" class="space-y-4 py-4">
+                <ul x-cloak x-show="open" class="space-y-4 py-4">
                     @foreach($command->getOptions() as $option)
                         <li>
                             @if($option->isBoolean())
@@ -84,7 +84,7 @@
             </div>
         </div>
 
-        <div x-show="state === 'success' || state === 'error'">
+        <div x-cloak x-show="state === 'success' || state === 'error'">
             <pre class="mt-16 bg-gray-700 text-white rounded p-8" x-text="output"></pre>
             <div class="flex justify-end mt-1">
                 <button class="text-xs font-semibold text-gray-400 hover:text-gray-600 hover:underline" @click="clear">Clear</button>

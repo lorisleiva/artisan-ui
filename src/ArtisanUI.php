@@ -15,6 +15,12 @@ class ArtisanUI
             ->mapInto(Command::class);
     }
 
+    public function allGroupedByNamespace(): Collection
+    {
+        return $this->all()
+            ->groupBy(fn (Command $command) => $command->getNamespace());
+    }
+
     public function find(string $name): ?Command
     {
         return $this->all()->get($name);

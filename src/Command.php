@@ -4,6 +4,7 @@ namespace Lorisleiva\ArtisanUI;
 
 use Illuminate\Console\Command as ArtisanCommand;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use JetBrains\PhpStorm\Pure;
 
 class Command
@@ -18,6 +19,11 @@ class Command
     #[Pure] public function getName(): string
     {
         return $this->artisanCommand->getName();
+    }
+
+    #[Pure] public function getNamespace(): ?string
+    {
+        return Str::before($this->getName(), ':');
     }
 
     #[Pure] public function getDescription(): string

@@ -10,6 +10,6 @@ class ShowArtisanUI
     public function __invoke(ArtisanUI $artisanUI): View
     {
         return view('artisan-ui::home')
-            ->with('commands', $artisanUI->all());
+            ->with('commands', $artisanUI->allGroupedByNamespace());
     }
 }

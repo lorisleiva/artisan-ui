@@ -3,11 +3,17 @@
 @php /** @var Lorisleiva\ArtisanUI\Command $command */ @endphp
 
 @section('content')
-    <h1>Hello potato!</h1>
-
-    <ul>
-        @foreach($commands as $command)
-            <li><a href="/artisan/{{ $command->getName() }}">{{ $command->getName() }}</a></li>
-        @endforeach
-    </ul>
+    @foreach($commands as $namespace => $commandGroup)
+        <div x-data="{ open: false }" class="mb-4">
+            @include('artisan-ui::partials.accordion-button', [
+                'title' => $namespace,
+                'disabled' => false,
+            ])
+            <ul x-cloak>
+                @foreach($commandGroup as $command)
+                    <li><a href="{{ route('artisan-ui.detail', $command->getName()) }}">{{ $command->getName() }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+    @endforeach
 @endsection
