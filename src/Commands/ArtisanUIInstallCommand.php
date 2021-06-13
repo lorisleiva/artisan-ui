@@ -11,6 +11,11 @@ class ArtisanUIInstallCommand extends Command
 
     public function handle()
     {
-        $this->info('Done!');
+        $this->call('vendor:publish', [
+            '--tag' => ['artisan-ui-assets', 'artisan-ui-config'],
+            '--force' => true,
+        ]);
+
+        $this->info('All done!');
     }
 }
