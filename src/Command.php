@@ -23,6 +23,10 @@ class Command
 
     #[Pure] public function getNamespace(): ?string
     {
+        if (! Str::contains($this->getName(), ':')) {
+            return null;
+        }
+
         return Str::before($this->getName(), ':');
     }
 
