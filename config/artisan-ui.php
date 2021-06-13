@@ -1,5 +1,7 @@
 <?php
 
+use Lorisleiva\ArtisanUI\Http\Middleware\AuthorizeArtisanUI;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -38,5 +40,5 @@ return [
     |
     */
 
-    'middleware' => ['web'],
+    'middleware' => ['web', AuthorizeArtisanUI::class],
 ];

@@ -2,12 +2,30 @@
 
 namespace Lorisleiva\ArtisanUI;
 
+use Closure;
 use Illuminate\Console\Command as ArtisanCommand;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Artisan;
 
 class ArtisanUI
 {
+    public ?Closure $authUsing = null;
+
+    public function auth(Closure $callback): self
+    {
+        $this->authUsing = $callback;
+
+        return $this;
+    }
+
+    public function check(Request $request): bool
+    {
+        return ($this->authUsing ?: function () {
+            return app()->environment('local');
+        })($request);
+    }
+
     public function all(): Collection
     {
         return collect(Artisan::all())
