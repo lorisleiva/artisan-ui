@@ -12,7 +12,7 @@
             'title' => sprintf('Arguments (%s)', count($command->getDefinition()->getArguments()))
         ])
 
-        <ul x-show="open">
+        <ul x-show="open" class="space-y-4 py-4">
             @foreach($command->getDefinition()->getArguments() as $argument)
                 <li>
                     @include('artisan-ui::.partials.argument', compact('argument'))
@@ -26,7 +26,7 @@
             'title' => sprintf('Options (%s)', count($command->getDefinition()->getOptions()))
         ])
 
-        <ul x-show="open">
+        <ul x-show="open" class="space-y-4 py-4">
             @foreach($command->getDefinition()->getOptions() as $option)
                 <li>
                     @include('artisan-ui::.partials.option', compact('option'))

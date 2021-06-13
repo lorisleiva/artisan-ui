@@ -1,3 +1,7 @@
 @php /** @var Symfony\Component\Console\Input\InputOption $option */ @endphp
 
-{{ $option->getName() }}
+@include('artisan-ui::fields.boolean', [
+    'name' => $option->getName(),
+    'default' => $option->getDefault(),
+    'description' => $option->getDescription(),
+])
