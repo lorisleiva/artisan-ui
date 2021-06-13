@@ -2,7 +2,7 @@
 
 namespace Lorisleiva\ArtisanUI;
 
-use Illuminate\Console\Command;
+use Illuminate\Console\Command as ArtisanCommand;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Artisan;
 
@@ -11,7 +11,8 @@ class ArtisanUI
     public function all(): Collection
     {
         return collect(Artisan::all())
-            ->filter(fn ($command) => $command instanceof Command);
+            ->filter(fn ($command) => $command instanceof ArtisanCommand)
+            ->mapInto(Command::class);
     }
 
     public function find(string $name): ?Command

@@ -1,5 +1,7 @@
 @extends('artisan-ui::layout')
-@php /** @var Illuminate\Console\Command $command */ @endphp
+@php /** @var Lorisleiva\ArtisanUI\Command $command */ @endphp
+@php /** @var Lorisleiva\ArtisanUI\CommandArgument $argument */ @endphp
+@php /** @var Lorisleiva\ArtisanUI\CommandOption $option */ @endphp
 
 @section('content')
     <div x-data="command">
@@ -10,36 +12,48 @@
 
         <div x-data="{ open: false }" class="mb-4">
             @include('artisan-ui::partials.accordion-button', [
-                'title' => sprintf('Arguments (%s)', count($command->getDefinition()->getArguments())),
-                'disabled' => empty($command->getDefinition()->getArguments()),
+                'title' => sprintf('Arguments (%s)', $command->getArgumentCount()),
+                'disabled' => ! $command->hasArguments(),
             ])
 
-            @unless(empty($command->getDefinition()->getArguments()))
+            @if($command->hasArguments())
                 <ul x-show="open" class="space-y-4 py-4">
-                    @foreach($command->getDefinition()->getArguments() as $argument)
+                    @foreach($command->getArguments() as $argument)
                         <li>
-                            @include('artisan-ui::.partials.argument', compact('argument'))
+                            @if($argument->isArray())
+                                {{-- TODO --}}
+                                @include('artisan-ui::fields.text', ['input' => $argument])
+                            @else
+                                @include('artisan-ui::fields.text', ['input' => $argument])
+                            @endif
                         </li>
                     @endforeach
                 </ul>
-            @endunless
+            @endif
         </div>
 
         <div x-data="{ open: false }" class="mb-4">
             @include('artisan-ui::partials.accordion-button', [
-                'title' => sprintf('Options (%s)', count($command->getDefinition()->getOptions())),
-                'disabled' => empty($command->getDefinition()->getOptions()),
+                'title' => sprintf('Options (%s)', $command->getOptionCount()),
+                'disabled' => ! $command->hasOptions(),
             ])
 
-            @unless(empty($command->getDefinition()->getOptions()))
+            @if($command->hasOptions())
                 <ul x-show="open" class="space-y-4 py-4">
-                    @foreach($command->getDefinition()->getOptions() as $option)
+                    @foreach($command->getOptions() as $option)
                         <li>
-                            @include('artisan-ui::.partials.option', compact('option'))
+                            @if($option->isBoolean())
+                                @include('artisan-ui::fields.boolean', ['input' => $option])
+                            @elseif($option->isArray())
+                                {{-- TODO --}}
+                                @include('artisan-ui::fields.text', ['input' => $option])
+                            @else
+                                @include('artisan-ui::fields.text', ['input' => $option])
+                            @endif
                         </li>
                     @endforeach
                 </ul>
-            @endunless
+            @endif
         </div>
 
         <div class="flex space-x-8 items-center">
@@ -82,16 +96,8 @@
         document.addEventListener('alpine:initializing', () => {
             Alpine.data('command', () => ({
                 state: 'idle',
-                arguments: {!!
-                    collect($command->getDefinition()->getArguments())
-                        ->mapWithKeys(fn ($value) => [$value->getName() => null])
-                        ->toJson()
-                !!},
-                options: {!!
-                    collect($command->getDefinition()->getOptions())
-                        ->mapWithKeys(fn ($value) => [$value->getName() => null])
-                        ->toJson()
-                !!},
+                arguments: {!! $command->getArgumentsAsJson() !!},
+                options: {!! $command->getOptionsAsJson() !!},
                 route: '{{ route('artisan-ui.execution', $command->getName()) }}',
                 output: '',
 
