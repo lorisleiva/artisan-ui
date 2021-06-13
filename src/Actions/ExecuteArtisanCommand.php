@@ -3,7 +3,7 @@
 namespace Lorisleiva\ArtisanUI\Actions;
 
 use Lorisleiva\ArtisanUI\ArtisanUI;
-use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 
 class ExecuteArtisanCommand
@@ -12,7 +12,9 @@ class ExecuteArtisanCommand
     {
         $command = $artisanUI->findOrFail($name);
 
-        $input = new StringInput('SomeEvent');
+        $input = new ArrayInput([
+            'name' => 'SomeEvent',
+        ]);
         $output = new BufferedOutput();
         $command->run($input, $output);
 
