@@ -8,9 +8,9 @@ use Symfony\Component\Console\Input\InputOption;
 
 abstract class CommandInput
 {
-    protected InputArgument|InputOption $input;
+    protected InputArgument | InputOption $input;
 
-    public function __construct(InputArgument|InputOption $input)
+    public function __construct(InputArgument | InputOption $input)
     {
         $this->input = $input;
     }
@@ -28,7 +28,7 @@ abstract class CommandInput
         return $this->input->getDescription();
     }
 
-    #[Pure] public function getDefault(): string|array|null
+    #[Pure] public function getDefault(): string | array | null
     {
         return $this->input->getDefault();
     }
