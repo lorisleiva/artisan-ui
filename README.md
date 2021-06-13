@@ -1,10 +1,13 @@
-# Artisan UI
+# 🧰 Artisan UI
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lorisleiva/artisan-ui.svg)](https://packagist.org/packages/lorisleiva/artisan-ui)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/lorisleiva/package-artisan-ui-laravel/Tests?label=tests)](https://github.com/lorisleiva/package-artisan-ui-laravel/actions?query=workflow%3ATests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/lorisleiva/artisan-ui.svg)](https://packagist.org/packages/lorisleiva/artisan-ui)
 
-A artisan-ui repository for Laravel Packages.
+Run your artisan commands by pressing buttons.
+
+![Capture 2021-06-13T21 53 30 3](https://user-images.githubusercontent.com/3642397/121821698-724ef200-cc92-11eb-8645-f3a877bc2ec6.gif)
+
 
 ## Installation
 
