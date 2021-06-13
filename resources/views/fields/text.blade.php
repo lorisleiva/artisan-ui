@@ -1,7 +1,13 @@
 @php /** @var Lorisleiva\ArtisanUI\CommandInput $input */ @endphp
 
 <div>
-    <label for="email" class="block text-sm font-medium text-gray-700">{{ $input->getName() }}</label>
+    <label class="flex text-sm text-gray-700 space-x-2">
+        <div class="font-medium">{{ $input->getName() }}</div>
+        @if($input->isRequired())
+            <div class="text-gray-500">•</div>
+            <div class="text-gray-500">required</div>
+        @endif
+    </label>
     <div class="mt-1">
         <input
             x-model="{{ $input->getAbsoluteKey() }}"
