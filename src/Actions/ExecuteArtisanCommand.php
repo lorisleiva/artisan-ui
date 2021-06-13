@@ -20,7 +20,7 @@ class ExecuteArtisanCommand
             ->reject(fn ($value) => is_null($value))
             ->mapWithKeys(fn ($value, $key) => ["--$key" => $value]);
 
-        $input = new ArrayInput($arguments->concat($options)->toArray());
+        $input = new ArrayInput($arguments->merge($options)->toArray());
         $output = new BufferedOutput();
         $returnCode = $command->run($input, $output);
 
