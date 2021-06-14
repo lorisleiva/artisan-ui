@@ -126,6 +126,12 @@
                     this.state = 'idle'
                     this.output = ''
                 },
+
+                updateArrayValue (type, name, value, index) {
+                    const arr = this[type][name] || []
+                    arr[index] = value
+                    this[type][name] = arr
+                },
             }))
         })
     </script>
