@@ -10,7 +10,7 @@
             <p class="text-gray-700">{{ $command->getDescription() }}</p>
         </header>
 
-        <div x-data="{ open: false }" class="mb-4">
+        <div x-data="{ open: {{ $command->shouldOpenArgumentsAccordionOnLoad()  }} }" class="mb-4">
             @include('artisan-ui::partials.accordion-button', [
                 'title' => sprintf('Arguments (%s)', $command->getArgumentCount()),
                 'disabled' => ! $command->hasArguments(),

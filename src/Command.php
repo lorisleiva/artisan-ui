@@ -85,4 +85,12 @@ class Command
     {
         return $this->artisanCommand;
     }
+
+    public function shouldOpenArgumentsAccordionOnLoad(): bool
+    {
+        if (!$this->hasArguments())
+            return false;
+
+        return $this->getArguments()->map(fn(CommandArgument $argument) => $argument->isRequired())->count() > 0;
+    }
 }
