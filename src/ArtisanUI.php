@@ -12,7 +12,7 @@ class ArtisanUI
 {
     public ?Closure $authUsing = null;
 
-    public function auth(Closure $callback): self
+    public function auth(?Closure $callback): self
     {
         $this->authUsing = $callback;
 

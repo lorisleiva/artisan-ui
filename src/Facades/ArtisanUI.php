@@ -9,7 +9,7 @@ use Lorisleiva\ArtisanUI\ArtisanUI as ConcreteArtisanUI;
 
 /**
  * @see ConcreteArtisanUI
- * @method ConcreteArtisanUI auth(Closure $callback)
+ * @method ConcreteArtisanUI auth(?Closure $callback)
  * @method bool check(Request $request)
  */
 class ArtisanUI extends Facade
