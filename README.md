@@ -1,7 +1,7 @@
 # 🧰 Artisan UI
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lorisleiva/artisan-ui.svg)](https://packagist.org/packages/lorisleiva/artisan-ui)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/lorisleiva/package-artisan-ui-laravel/Tests?label=tests)](https://github.com/lorisleiva/package-artisan-ui-laravel/actions?query=workflow%3ATests+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/lorisleiva/artisan-ui/Tests?label=tests)](https://github.com/lorisleiva/artisan-ui/actions?query=workflow%3ATests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/lorisleiva/artisan-ui.svg)](https://packagist.org/packages/lorisleiva/artisan-ui)
 
 Run your artisan commands by pressing buttons.
