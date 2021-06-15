@@ -91,6 +91,6 @@ class Command
         if (!$this->hasArguments())
             return false;
 
-        return $this->getArguments()->map(fn(CommandArgument $argument) => $argument->isRequired())->count() > 0;
+        return $this->getArguments()->filter(fn(CommandArgument $argument) => $argument->isRequired())->count() > 0;
     }
 }
