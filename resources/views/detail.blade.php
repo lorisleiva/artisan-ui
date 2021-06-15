@@ -132,6 +132,12 @@
                     arr[index] = value
                     this[type][name] = arr
                 },
+
+                deleteArrayValue (type, name, index) {
+                    const arr = this[type][name] || []
+                    arr.splice(index, 1)
+                    this[type][name] = arr
+                },
             }))
         })
     </script>
