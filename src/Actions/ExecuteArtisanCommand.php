@@ -6,9 +6,11 @@ use Illuminate\Console\Command;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Lorisleiva\ArtisanUI\ArtisanUI;
+use RuntimeException;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\BufferedOutput;
+use Throwable;
 
 class ExecuteArtisanCommand
 {
@@ -17,7 +19,15 @@ class ExecuteArtisanCommand
         $command = $artisanUI->findOrFail($name)->getArtisanCommand();
         $input = $this->getInputFromRequest($request);
         $output = new BufferedOutput();
-        $returnCode = $command->run($input, $output);
+
+        try {
+            $returnCode = $command->run($input, $output);
+        } catch (Throwable $exception) {
+            return response()->json([
+                'success' => false,
+                'output' => $exception->getMessage(),
+            ]);
+        }
 
         return response()->json([
             'success' => $returnCode === Command::SUCCESS,

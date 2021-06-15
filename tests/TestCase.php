@@ -3,6 +3,7 @@
 namespace Lorisleiva\ArtisanUI\Tests;
 
 use Lorisleiva\ArtisanUI\ArtisanUIServiceProvider;
+use Lorisleiva\ArtisanUI\Facades\ArtisanUI;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -16,6 +17,8 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        //
+        ArtisanUI::auth(function ($request) {
+            return true;
+        });
     }
 }
