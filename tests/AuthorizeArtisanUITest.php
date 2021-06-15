@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Lorisleiva\ArtisanUI\Facades\ArtisanUI;
 
-function setEnvironment(string $environment) {
+function setEnvironment(string $environment)
+{
     config()->set('app.env', $environment);
     app()['env'] = $environment;
 }
