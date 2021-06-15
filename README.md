@@ -4,10 +4,7 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/lorisleiva/artisan-ui/Tests?label=tests)](https://github.com/lorisleiva/artisan-ui/actions?query=workflow%3ATests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/lorisleiva/artisan-ui.svg)](https://packagist.org/packages/lorisleiva/artisan-ui)
 
-Run your artisan commands by pressing buttons.
-
-![Capture 2021-06-13T21 53 30 3](https://user-images.githubusercontent.com/3642397/121821698-724ef200-cc92-11eb-8645-f3a877bc2ec6.gif)
-
+![artisan-ui](https://user-images.githubusercontent.com/3642397/122096132-21600a80-ce06-11eb-9d26-a73282cc21dd.png)
 
 ## Installation
 
@@ -19,6 +16,8 @@ php artisan artisan-ui:install
 ## Usage
 
 Just go to `/artisan` and enjoy! 🌺
+
+![Capture 2021-06-13T21 53 30 3](https://user-images.githubusercontent.com/3642397/121821698-724ef200-cc92-11eb-8645-f3a877bc2ec6.gif)
 
 ## Configure access
 
