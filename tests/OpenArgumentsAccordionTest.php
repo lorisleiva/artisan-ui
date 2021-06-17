@@ -3,9 +3,7 @@
 
 namespace Lorisleiva\ArtisanUI\Tests;
 
-
 use Lorisleiva\ArtisanUI\ArtisanUI;
-use Lorisleiva\ArtisanUI\Command;
 
 it('closes the accordion when there are no arguments', function () {
     $artisanCommand = (new ArtisanUI())->find('config:cache');

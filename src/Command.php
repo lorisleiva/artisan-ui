@@ -88,6 +88,6 @@ class Command
 
     public function shouldOpenArgumentsAccordionOnLoad(): bool
     {
-        return $this->getArguments()->contains(fn(CommandArgument $argument) => $argument->isRequired());
+        return $this->getArguments()->contains(fn (CommandArgument $argument) => $argument->isRequired());
     }
 }
