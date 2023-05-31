@@ -83,7 +83,7 @@
         </div>
 
         <div x-cloak x-show="state === 'success' || state === 'error'">
-            <pre class="mt-16 bg-gray-700 text-white rounded p-8" x-text="output"></pre>
+            <pre class="mt-16 bg-gray-700 text-white rounded p-8 overflow-x-scroll" x-text="output"></pre>
             <div class="flex justify-end mt-1">
                 <button class="text-xs font-semibold text-gray-400 hover:text-gray-600 hover:underline" @click="clear">Clear</button>
             </div>
