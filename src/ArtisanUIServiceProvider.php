@@ -9,13 +9,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ArtisanUIServiceProvider extends PackageServiceProvider
 {
-    public function boot(): void
-    {
-        parent::boot();
-
-        AboutCommand::add('Artisan UI', fn () => ['Version' => 'fork of Mánuel']);
-    }
-
     public function configurePackage(Package $package): void
     {
         $package
